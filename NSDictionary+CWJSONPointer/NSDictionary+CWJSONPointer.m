@@ -11,7 +11,7 @@
 // JSON Pointer RFC 6901 April 2013
 @implementation NSDictionary(CWJSONPointer)
 
-- (id)objectForPointer:(NSString*)pointer
+- (id)objectForJSONPointer:(NSString*)pointer
 {
     if( !pointer )                      {
         // Undocumented behavior, terminate evaluation.
@@ -91,45 +91,45 @@
     return object;
 }
 
-- (NSString*)NSStringForPointer:(NSString *)pointer
+- (NSString*)stringForJSONPointer:(NSString *)pointer
 {
-    id object = [self objectForPointer:pointer];
+    id object = [self objectForJSONPointer:pointer];
     if( object && [object isKindOfClass:[NSString class] ] ){
         return object;
     }
     return nil;
 }
 
-- (NSNumber*)NSNumberForPointer:(NSString *)pointer
+- (NSNumber*)numberForJSONPointer:(NSString *)pointer
 {
-    id object = [self objectForPointer:pointer];
+    id object = [self objectForJSONPointer:pointer];
     if( object && [object isKindOfClass:[NSNumber class] ] ){
         return object;
     }
     return nil;
 }
 
-- (NSDictionary*)NSDictionaryForPointer:(NSString *)pointer
+- (NSDictionary*)dictionaryForJSONPointer:(NSString *)pointer
 {
-    id object = [self objectForPointer:pointer];
+    id object = [self objectForJSONPointer:pointer];
     if( object && [object isKindOfClass:[NSDictionary class] ] ){
         return object;
     }
     return nil;
 }
 
-- (NSArray*)NSArrayForPointer:(NSString *)pointer
+- (NSArray*)arrayForJSONPointer:(NSString *)pointer
 {
-    id object = [self objectForPointer:pointer];
+    id object = [self objectForJSONPointer:pointer];
     if( object && [object isKindOfClass:[NSArray class] ] ){
         return object;
     }
     return nil;
 }
 
-- (NSNumber*)BooleanForPointer:(NSString*)pointer
+- (NSNumber*)booleanForJSONPointer:(NSString*)pointer
 {
-    id object = [self objectForPointer:pointer];
+    id object = [self objectForJSONPointer:pointer];
     if( object && [object isKindOfClass:[NSNumber class] ] ){
         if( [object intValue] > 1 || [object intValue] < 0 ){return nil;}
         return object;

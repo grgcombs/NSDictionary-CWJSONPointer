@@ -10,12 +10,12 @@
 
 @interface NSDictionary(CWJSONPointer)
 
-- (id)objectForPointer:(NSString*)pointer;
+- (id)objectForJSONPointer:(NSString *)pointer;
 
-- (NSArray*)NSArrayForPointer:(NSString*)pointer;
-- (NSNumber*)NSNumberForPointer:(NSString*)pointer;
-- (NSNumber*)BooleanForPointer:(NSString*)pointer;
-- (NSString*)NSStringForPointer:(NSString*)pointer;
-- (NSDictionary*)NSDictionaryForPointer:(NSString*)pointer;
+- (NSArray *)arrayForJSONPointer:(NSString *)pointer;
+- (NSNumber *)numberForJSONPointer:(NSString *)pointer;
+- (NSNumber *)booleanForJSONPointer:(NSString *)pointer;
+- (NSString *)stringForJSONPointer:(NSString *)pointer;
+- (NSDictionary *)dictionaryForJSONPointer:(NSString *)pointer;
 
 @end
